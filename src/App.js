@@ -4,6 +4,10 @@ import axios from 'axios'
 import logo from './logo.svg';
 import './App.css';
 
+const axiosWithCred = axios.create({
+  withCredentials: true,
+});
+
 function App() {
   const [response, setResponse] = useState(null)
 
@@ -14,17 +18,9 @@ function App() {
         <p>
           {JSON.stringify(response)}
         </p>
-        <button onClick={() => axios.get(help.withBaseURL('/api'))}>api</button>
-        <button onClick={() => axios.get(help.withBaseURL('/api/users'))}>api/users</button>
-        <button onClick={() => axios.get(help.withBaseURL('/api/roles'))}>api/roles</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={() => axiosWithCred.get(help.withBaseURL('/api'))}>api</button>
+        <button onClick={() => axiosWithCred.get(help.withBaseURL('/api/users'))}>api/users</button>
+        <button onClick={() => axiosWithCred.get(help.withBaseURL('/api/roles'))}>api/roles</button>
       </header>
     </div>
   );
