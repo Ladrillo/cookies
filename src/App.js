@@ -11,6 +11,13 @@ const axiosWithCred = axios.create({
 function App() {
   const [response, setResponse] = useState(null)
 
+  const request = url => {
+    axiosWithCred.get(help.withBaseURL(url))
+      .then(res => {
+        setResponse(res.data)
+      })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,9 +25,9 @@ function App() {
         <p>
           {JSON.stringify(response)}
         </p>
-        <button onClick={() => axiosWithCred.get(help.withBaseURL('/api'))}>api</button>
-        <button onClick={() => axiosWithCred.get(help.withBaseURL('/api/users'))}>api/users</button>
-        <button onClick={() => axiosWithCred.get(help.withBaseURL('/api/roles'))}>api/roles</button>
+        <button onClick={() => request('/api')}>api</button>
+        <button onClick={() => request('/api/users')}>api/users</button>
+        <button onClick={() => request('/api/roles')}>api/roles</button>
       </header>
     </div>
   );
