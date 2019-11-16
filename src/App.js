@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          { JSON.stringify(response) }
+          {JSON.stringify(response)}
         </p>
         <button onClick={() => axios.get(help.withBaseURL('/api'))}>api</button>
         <button onClick={() => axios.get(help.withBaseURL('/api/users'))}>api/users</button>
