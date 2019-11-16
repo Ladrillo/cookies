@@ -12,6 +12,7 @@ function App() {
   const [response, setResponse] = useState(null)
 
   const request = url => {
+    console.log(document.cookie);
     axiosWithCred.get(help.withBaseURL(url))
       .then(res => {
         setResponse(res.data)
