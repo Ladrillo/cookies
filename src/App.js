@@ -29,6 +29,7 @@ function App() {
         <button onClick={() => request('/api')}>api</button>
         <button onClick={() => request('/api/users')}>api/users</button>
         <button onClick={() => request('/api/roles')}>api/roles</button>
+        <button onClick={() => request('/api/login?name=gabe')}>api/login</button>
       </header>
     </div>
   );
