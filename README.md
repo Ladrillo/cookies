@@ -1,68 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+During the development process, the React devs should always spin up the backend on their machines and develop against it. The backend code is run in a separate window of VSCode and is kept updated by doing git pull, deleting the SQLite db and re-running scripts.
 
-## Available Scripts
+Here are the steps.
 
-In the project directory, you can run:
+1. Front end devs will clone the backend repo as soon as it's functional, install, run the migration script and run the start script.
 
-### `npm start`
+1. The React code should should use "dynamic" URLs for the endpoints. If process.env.NODE_ENV is "development", the base URL for the endpoints should be something like http://localhost:4400. If it's "production", it should be something like https://someapp.herokuapp.com. The NODE_ENV will be one or the other depending on whether the frontend was bundled with start or with build.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. The React devs can see when new commits are pushed to the master branch of the backend repo thanks to Vscode. To develop against the latest, they should (A) delete their SQLite db (because the migration code might have changed), (B) pull the latest, and (C) re-run the install, migration and start scripts.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. The backend devs should include instructions for the front end devs in the readme, on how to spin up the server locally.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Pair programming is strongly recommended to ensure the frontend dev can get the backend up.
+In a little bit we'll have a session with students to walk them through all of this.

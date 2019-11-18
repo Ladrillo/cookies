@@ -5,16 +5,15 @@ import logo from './logo.svg';
 import './App.css';
 
 // if using cookies
-const axiosWithCred = axios.create({
-  withCredentials: true,
-});
+// const axiosWithCred = axios.create({
+//   withCredentials: true,
+// });
 
 function App() {
   const [response, setResponse] = useState(null)
 
-  const request = url => {
-    console.log(document.cookie);
-    axiosWithCred.get(help.withBaseURL(url))
+  const getRequest = api => {
+    axios.get(help.withBaseURL(api))
       .then(res => {
         setResponse(res.data)
       })
@@ -27,10 +26,10 @@ function App() {
         <p>
           {JSON.stringify(response)}
         </p>
-        <button onClick={() => request('/api')}>api</button>
-        <button onClick={() => request('/api/users')}>api/users</button>
-        <button onClick={() => request('/api/roles')}>api/roles</button>
-        <button onClick={() => request('/api/login?name=gabe')}>api/login</button>
+        <button onClick={() => getRequest('/api')}>api</button>
+        <button onClick={() => getRequest('/api/users')}>api/users</button>
+        <button onClick={() => getRequest('/api/roles')}>api/roles</button>
+        <button onClick={() => getRequest('/api/login?name=gabe')}>api/login</button>
       </header>
     </div>
   );
