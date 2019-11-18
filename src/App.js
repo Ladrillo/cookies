@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as help from './helpers';
 import axios from 'axios'
 import logo from './logo.svg';
 import './App.css';
 
+// if using cookies
 const axiosWithCred = axios.create({
   withCredentials: true,
 });
